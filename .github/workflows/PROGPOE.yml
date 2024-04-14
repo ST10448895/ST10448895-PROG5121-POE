@@ -31,7 +31,7 @@ jobs:
       #compiles classes to test
       - name: compile classes
         working-directory: ./src
-        run: javac -cp "../testresoureces/junit-platform-console-standalone-1.6.0.jar" ./login/Login.java ./login/Message.java "../test/login/LoginTest.java" "../test/login/Message.java"
+        run: javac -cp "../testresoureces/junit-platform-console-standalone-1.6.0.jar" ./login/Login.java ./login/Message.java "../test/login/LoginTest.java" "../test/login/MessageTest.java"
       
       # lists contents of src to verify that classes compliled
       - name: List contents of src directory after compile
