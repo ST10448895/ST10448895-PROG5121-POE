@@ -1,0 +1,65 @@
+# This is a basic workflow to help you get started with Actions
+
+name: TestPROGPOE
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # list contents or directory
+      - name: List contents
+        run: Is
+      #compiles classes to test
+      - name: compile classes
+        working-directory: ./src
+        run: javac -cp "../testresoureces/junit-platform-console-standalone-1.6.0.jar" ./Login/Login.java ./Login/Message.java "../test/Login/LoginTest.java" "../test/Login/Message.java"
+      
+      # lists contents of src to verify that classes compliled
+      - name: List contents of src directory after compile
+        working-directory: ./src/Login
+        run: Is
+
+
+      #copy compiled classes to test directory
+      - name: copy compiled classes to testresources directory
+        working-directory: ./src/Login
+        run: cp -t "../../test/Login" Message.class Login.class
+
+      #copy compiled tests
+      - name: copy compiled Test classes to testresources directory
+        working-directory: ./test/Login
+        run: cp -t "../../testresources/" Message.class Login.class
+
+      # list contents or directory
+      - name: List contents test package
+        working-directory: ./test/Login
+        run: Is
+
+      #run Message class tests and output report
+      - name: run Login Class tests and create report
+        working-directory: ./test
+        run: |
+         Is
+         java -jar  "../testresoureces/junit-platform-console-standalone-1.6.0.jar" -cp "." --selsect-class Login.MessageTest
+          
+
+   
