@@ -27,7 +27,7 @@ jobs:
 
       # list contents or directory
       - name: List contents
-        run: 1s
+        run: ls
       #compiles classes to test
       - name: compile classes
         working-directory: ./src
@@ -36,7 +36,7 @@ jobs:
       # lists contents of src to verify that classes compliled
       - name: List contents of src directory after compile
         working-directory: ./src/Login
-        run: 1s
+        run: ls
 
 
       #copy compiled classes to test directory
@@ -52,13 +52,13 @@ jobs:
       # list contents or directory
       - name: List contents test package
         working-directory: ./test/Login
-        run: 1s
+        run: ls
 
       #run Message class tests and output report
       - name: run Login Class tests and create report
         working-directory: ./test
         run: |
-         1s
+         ls
          java -jar  "../testresoureces/junit-platform-console-standalone-1.6.0.jar" -cp "." --selsect-class Login.MessageTest
           
 
