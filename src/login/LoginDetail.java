@@ -15,10 +15,10 @@ public class LoginDetail {
     String Surename;
    Boolean U;
    Boolean P;
-    private String Username1;
+    public String Username1;
     
-    private String Password2;
-    private String Success;
+    public String Password2;
+    public String Success;
    
     public  void start() {
         NAME();
