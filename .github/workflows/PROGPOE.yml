@@ -31,7 +31,7 @@ jobs:
       #compiles classes to test
       - name: compile classes
         working-directory: ./src
-        run: javac -cp "../testresoureces/junit-platform-console-standalone-1.6.0.jar" ./login/Login.java ./login/Message.java "../test/login/LoginTest.java" "../test/login/MessageTest.java"
+        run: javac -cp "../testresoureces/junit-platform-console-standalone-1.6.0.jar" ./login/Login.java ./login/Message.java ./login/LoginDetail.java "../test/login/LoginTest.java" "../test/login/MessageTest.java" "../test/login/LoginDetailTest.java" 
       
       # lists contents of src to verify that classes compliled
       - name: List contents of src directory after compile
@@ -42,12 +42,12 @@ jobs:
       #copy compiled classes to test directory
       - name: copy compiled classes to testresources directory
         working-directory: ./src/login
-        run: cp -t "../../test/Login" Message.class Login.class
+        run: cp -t "../../test/Login" Message.class Login.class LoginDetail.class
 
       #copy compiled tests
       - name: copy compiled Test classes to testresources directory
         working-directory: ./test/login
-        run: cp -t "../../testresources/" Message.class Login.class
+        run: cp -t "../../testresources/" Message.class Login.class LoginDetail.class
 
       # list contents or directory
       - name: List contents test package
@@ -60,6 +60,13 @@ jobs:
         run: |
          ls
          java -jar  "../testresoureces/junit-platform-console-standalone-1.6.0.jar" -cp "." --selsect-class login.MessageTest
+
+          #run Message class tests and output report
+      - name: run LoginDetail Class tests and create report
+        working-directory: ./test
+        run: |
+         ls
+         java -jar  "../testresoureces/junit-platform-console-standalone-1.6.0.jar" -cp "." --selsect-class login.LoginDetailTest
           
 
    
