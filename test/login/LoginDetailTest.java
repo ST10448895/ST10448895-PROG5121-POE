@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
  */
 package login;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import org.junit.Test;
@@ -13,10 +14,13 @@ import static org.junit.Assert.*;
  * @author lab_services_student
  */
 public class LoginDetailTest {
+
     LoginDetail Username = new LoginDetail();
     LoginDetail Passwords = new LoginDetail();
-     LoginDetail Succeed = new LoginDetail();
-    
+    LoginDetail Succeed = new LoginDetail();
+    LoginDetail S = new LoginDetail();
+    String actual;
+
     public LoginDetailTest() {
     }
 
@@ -42,25 +46,24 @@ public class LoginDetailTest {
 
     @Test
     public void testCheckUsername() {
-      String expected = "Kyl_1";
-      String actual = Username.Username1;
-      assertEquals(expected,actual);
-      
-        
-        
+        boolean expected = true;
+        boolean actual = Username.CheckUsername();
+        assertTrue(actual);
+
     }
 
     @Test
     public void testCheckPasswordComplexity() {
-        String expected = "Ch&&sec@ke99!";
-      String actual = Passwords.Password2;
-      assertEquals(expected,actual);
-      
+        boolean expected = true;
+        boolean actual = Passwords.CheckPasswordComplexity();
+        assertEquals(expected, actual);
+        System.out.println("Password successfully captured");
+
     }
 
     @Test
     public void testRegisterUser() {
-        
+
     }
 
     @Test
@@ -71,9 +74,11 @@ public class LoginDetailTest {
 
     @Test
     public void testReturnLoginStatus() {
-        String expected = "Login Successful";
-        String actual = Succeed.Success;
-        assertEquals(expected,actual);
+        String expected ="Login Successful";
+       String actual1 = S.ReturnLoginStatus();
+        
+        assertEquals(expected, actual1);
+        System.out.println("Login Successfull:" +actual1);
     }
-    
+
 }
