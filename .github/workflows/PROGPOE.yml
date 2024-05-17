@@ -31,7 +31,7 @@ jobs:
       #compiles classes to test
       - name: compile classes
         working-directory: ./src
-        run: javac -cp "../testresoureces/junit-platform-console-standalone-1.6.0.jar" ./login/Login.java ./login/LoginDetail.java "../test/login/LoginTest.java"  ../test/login/LoginDetailTest.java" 
+        run: javac -cp "../testresoureces/junit-platform-console-standalone-1.6.0.jar" ./login/Login.java ./login/LoginDetail.java "../test/login/LoginTest.java"  ../test/login/LoginDetailTest.java" ./login/Task.java ./login/TO_DO_LIST.java "../test/login/TaskTest.java"  ../test/login/TO_DO_LISTTest.java" 
       
       # lists contents of src to verify that classes compliled
       - name: List contents of src directory after compile
@@ -42,12 +42,12 @@ jobs:
       #copy compiled classes to test directory
       - name: copy compiled classes to testresources directory
         working-directory: ./src/login
-        run: cp -t "../../test/Login" Message.class Login.class LoginDetail.class
+        run: cp -t "../../test/Login" Task.class Login.class LoginDetail.class TO_DO_TEST.class
 
       #copy compiled tests
       - name: copy compiled Test classes to testresources directory
         working-directory: ./test/login
-        run: cp -t "../../testresources/"  Login.class LoginDetail.class
+        run: cp -t "../../testresources/"  Login.class LoginDetail.class Task.class TO_DO_LIST.class
 
       # list contents or directory
       - name: List contents test package
@@ -55,7 +55,7 @@ jobs:
         run: ls
 
       #run Message class tests and output report
-      - name: run Login Class tests and create report
+      - name: run TO_DO_LIST Class tests and create report
         working-directory: ./test
         run: |
          ls
