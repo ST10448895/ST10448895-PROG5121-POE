@@ -19,7 +19,7 @@ public class LoginDetailTest {
     LoginDetail Passwords = new LoginDetail();
     LoginDetail Succeed = new LoginDetail();
     LoginDetail S = new LoginDetail();
-    String actual;
+    String actual, result;
      LoginDetail login = new LoginDetail();
 
     public LoginDetailTest() {
@@ -75,11 +75,13 @@ public class LoginDetailTest {
 
     @Test
     public void testReturnLoginStatus() {
-        login.U = true;
-        login.P = true;
-       
-        String result = login.ReturnLoginStatus();
+         login.Name = "Wandile ";
+        login.Surename = " Zuke";
+      if(  login.U =true  ){
+          if (login.P = true){
+         result = login.ReturnLoginStatus();}}
         assertEquals("Login Successful", result);
     }
+   
 
 }
