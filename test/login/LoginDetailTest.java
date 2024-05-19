@@ -20,6 +20,7 @@ public class LoginDetailTest {
     LoginDetail Succeed = new LoginDetail();
     LoginDetail S = new LoginDetail();
     String actual;
+     LoginDetail login = new LoginDetail();
 
     public LoginDetailTest() {
     }
@@ -74,11 +75,11 @@ public class LoginDetailTest {
 
     @Test
     public void testReturnLoginStatus() {
-        String expected ="Login Successful";
-       String actual1 = S.ReturnLoginStatus();
-        
-        assertEquals(expected, actual1);
-        System.out.println("Login Successfull:" +actual1);
+        login.U = true;
+        login.P = true;
+       
+        String result = login.ReturnLoginStatus();
+        assertEquals("Login Successful", result);
     }
 
 }
