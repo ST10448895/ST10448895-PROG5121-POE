@@ -48,17 +48,24 @@ public class LoginDetailTest {
     @Test
     public void testCheckUsername() {
         boolean expected = true;
+        String User ="Kyl_1";
+        Username.Username1 = User;
         boolean actual = Username.CheckUsername();
-        assertTrue(actual);
+        //assertTrue(actual);
+        assertEquals(expected, actual);
 
     }
 
     @Test
     public void testCheckPasswordComplexity() {
-        boolean expected = true;
+       boolean expected = true;
+        String Pass ="Password1@";
+        Passwords.Password2 = Pass;
         boolean actual = Passwords.CheckPasswordComplexity();
-        assertEquals(expected, actual);
+        //assertTrue(actual);
         System.out.println("Password successfully captured");
+        assertEquals(expected, actual);
+        
 
     }
 
