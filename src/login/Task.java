@@ -14,8 +14,11 @@ public class Task {
     public static int loops, Tasknumber, duration, option;
 
     public static void main(String[] args) {
-       // LoginDetail login = new LoginDetail();
-        //login.start();
+        LoginDetail login = new LoginDetail();
+        Login sign = new Login();
+        
+        login.start();
+        
         JOptionPane.showMessageDialog(null,"Welcome to EasyKanban" );
         TO_DO_LIST task;
         task = getTasks();
