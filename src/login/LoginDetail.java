@@ -16,15 +16,18 @@ public class LoginDetail {
     String Surename;
     Boolean U;
     Boolean P;
-    public String Username1;
+    public static String Username1;
 
-    public String Password2;
+    public static String Password2;
     public String Success;
 
     public void start() {
         NAME();
         Surename();
+        JOptionPane.showMessageDialog(null, "create a username that contains an underscore and is no longer than 5 characters");
+        Username1 = JOptionPane.showInputDialog("Enter a username");
         CheckUsername();
+        Password2 = JOptionPane.showInputDialog("Enter a password that is at least 8 characters long" + '\n' + "has a capital letter" + '\n' + "has a special character" + '\n' + " has at least one number");
         CheckPasswordComplexity();
 
         loginUser();
@@ -59,12 +62,14 @@ public class LoginDetail {
         return Surename;
     }
 
+    public void setCheckUsername(String USERS1) {
+        Username1 = USERS1;
+    }
+
     public boolean CheckUsername() {
 
-       // JOptionPane.showMessageDialog(null, "create a username that contains an underscore and is no longer than 5 characters");
-
+        // JOptionPane.showMessageDialog(null, "create a username that contains an underscore and is no longer than 5 characters");
         //Username1 = JOptionPane.showInputDialog("Enter a username");
-
         boolean validUsername = false;//tracks if username meets criteria 
 
         while (!validUsername) {//loop ensures that the user keeps entering a username until it meets the required conditions
@@ -80,6 +85,10 @@ public class LoginDetail {
         System.out.println(Username1);
         return true;
 
+    }
+
+    public void setCheckPasswordComplexity(String Password_User2) {
+        Password2 = Password_User2;
     }
 
     public boolean CheckPasswordComplexity() {
@@ -113,7 +122,7 @@ public class LoginDetail {
                 JOptionPane.showMessageDialog(null, "Password must contain at least one capital letter. TRY AGAIN");
             } else {
                 valid_password = true;
-                
+
             }
         }
         System.out.println(Password2);
@@ -145,7 +154,8 @@ public class LoginDetail {
     public String ReturnLoginStatus() {
 
         if (U && P) {
-            JOptionPane.showMessageDialog(null, "Login Successfull: Welcome" + '\n' + Name + Surename);
+
+            System.out.println("Login Successfull: Welcome" + '\n' + Name + Surename);
             Success = "Login Successful";
             return Success;
         } else {
