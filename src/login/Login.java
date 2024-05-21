@@ -14,17 +14,20 @@ public class Login {
     public static String Password2;
     
     public static void main(String[] args) {
-       LoginDetail login = new LoginDetail();
-        login.start();
+      LoginDetail login;
+        login = getLogin();
        
 }
-    public static LoginDetail getLogin(){LoginDetail login = new LoginDetail();
+    public static LoginDetail getLogin(){
+        LoginDetail login = new LoginDetail();
     login.NAME();
         login.Surename();
         JOptionPane.showMessageDialog(null, "create a username that contains an underscore and is no longer than 5 characters");
         Username1 = JOptionPane.showInputDialog("Enter a username");
+        login.setCheckUsername(Username1);
         login.CheckUsername();
-        Password2 = JOptionPane.showInputDialog("Enter a password that is at least 8 characters long"+'\n'+"has a capital letter"+'\n'+"has a special character"+'\n'+" has at least one number");
+        Password2 = JOptionPane.showInputDialog("Enter a password that is at least 8 characters long" + '\n' + "has a capital letter" + '\n' + "has a special character" + '\n' + " has at least one number");
+        login.setCheckPasswordComplexity(Password2);
         login.CheckPasswordComplexity();
 
         login.loginUser();
