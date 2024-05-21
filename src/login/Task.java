@@ -14,8 +14,9 @@ public class Task {
     public static int loops, Tasknumber, duration, option;
 
     public static void main(String[] args) {
-        LoginDetail login = new LoginDetail();
-        login.start();
+       // LoginDetail login = new LoginDetail();
+        //login.start();
+        JOptionPane.showMessageDialog(null,"Welcome to EasyKanban" );
         TO_DO_LIST task;
         task = getTasks();
     }
@@ -32,12 +33,18 @@ public class Task {
                     for (int i = 0; i < loops; i++) {//this for loop iterates from 0 up to (but not including) the value stored in loops,
                         task.setTaskNO(Tasknumber);
                         
-             
+             developer_Name = JOptionPane.showInputDialog("Enter developers name and surename");
+             task.setDeev_Name(developer_Name);
                         task.getDev_Name();//retrieves the developer’s name from the task object.
+                        task_NAME = JOptionPane.showInputDialog("enter the name of new task");
+                        task.setTask_Name(task_NAME);
                         task.getTask_Name();//retrieves the task name from the task object.
                         task.status();//retrieves the status from the task object.
+                        task.description = JOptionPane.showInputDialog(null, "Enter a task description less than 50 characters:");
                         task.checkTaskDescription();
                         task.TaskID();
+                        duration = Integer.parseInt(JOptionPane.showInputDialog("please enter total duration of task in hours"));
+                        task.setDuration(duration);
                         task.TotalHours();
                         task.TaskDetails();
                       
