@@ -61,9 +61,9 @@ public class LoginDetail {
 
     public boolean CheckUsername() {
 
-        JOptionPane.showMessageDialog(null, "create a username that contains an underscore and is no longer than 5 characters");
+       // JOptionPane.showMessageDialog(null, "create a username that contains an underscore and is no longer than 5 characters");
 
-        Username1 = JOptionPane.showInputDialog("Enter a username");
+        //Username1 = JOptionPane.showInputDialog("Enter a username");
 
         boolean validUsername = false;//tracks if username meets criteria 
 
@@ -88,7 +88,7 @@ public class LoginDetail {
             boolean hasNumber = false;
             boolean hasSpecialChar = false;
             boolean hasCapitalLetter = false;
-            Password2 = JOptionPane.showInputDialog("Enter a password that is at least 8 characters long"+'\n'+"has a capital letter"+'\n'+"has a special character"+'\n'+" has at least one number");
+            //Password2 = JOptionPane.showInputDialog("Enter a password that is at least 8 characters long"+'\n'+"has a capital letter"+'\n'+"has a special character"+'\n'+" has at least one number");
 
             if (Password2.length() < 8) {
                 JOptionPane.showMessageDialog(null, "Password must be at least 8 characters long");
