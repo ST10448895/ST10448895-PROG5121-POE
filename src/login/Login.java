@@ -29,8 +29,11 @@ public class Login {
         Password2 = JOptionPane.showInputDialog("Enter a password that is at least 8 characters long" + '\n' + "has a capital letter" + '\n' + "has a special character" + '\n' + " has at least one number");
         login.setCheckPasswordComplexity(Password2);
         login.CheckPasswordComplexity();
+          String USER3 = JOptionPane.showInputDialog("Enter your Username");
+        String pasword3 = JOptionPane.showInputDialog("Enter your password");
+       
 
-        login.loginUser();
+        login.loginUser(USER3,pasword3);
         login.ReturnLoginStatus();
     return login;    
     }
