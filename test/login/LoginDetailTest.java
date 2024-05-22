@@ -76,8 +76,11 @@ public class LoginDetailTest {
 
     @Test
     public void testLoginUser() {
-        assertTrue(Username.loginUser());
-        assertTrue(Passwords.loginUser());
+        String USER3 = "Kyl_1";
+        String pasword3 = "Password1@";
+        
+        assertTrue(Username.loginUser(USER3,pasword3));
+        assertTrue(Passwords.loginUser(USER3,pasword3));
     }
 
     @Test
