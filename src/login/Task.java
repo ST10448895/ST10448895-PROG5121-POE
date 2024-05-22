@@ -14,7 +14,7 @@ public class Task {
     public static int loops, Tasknumber, duration, option;
 
     public static void main(String[] args) {
-        LoginDetail login = new LoginDetail();
+       LoginDetail login = new LoginDetail();
         Login sign = new Login();
         
         login.start();
