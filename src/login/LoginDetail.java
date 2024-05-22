@@ -20,6 +20,7 @@ public class LoginDetail {
 
     public static String Password2;
     public String Success;
+    public String USER3, Password3;
 
     public void start() {
         NAME();
@@ -30,7 +31,7 @@ public class LoginDetail {
         Password2 = JOptionPane.showInputDialog("Enter a password that is at least 8 characters long" + '\n' + "has a capital letter" + '\n' + "has a special character" + '\n' + " has at least one number");
         CheckPasswordComplexity();
 
-        loginUser();
+        loginUser(Username1,Password2);
         ReturnLoginStatus();
 
     }
@@ -141,12 +142,10 @@ public class LoginDetail {
         }
     }
 
-    public Boolean loginUser() {
+    public Boolean loginUser(String USER3, String Password3) {
 
-        String USER3 = JOptionPane.showInputDialog("Enter your Username");
-        String pasword3 = JOptionPane.showInputDialog("Enter your password");
         U = USER3.equals(Username1);
-        P = pasword3.equals(Password2);
+        P = Password3.equals(Password2);
 
         return true;
     }
@@ -159,9 +158,8 @@ public class LoginDetail {
             Success = "Login Successful";
             return Success;
         } else {
-            JOptionPane.showMessageDialog(null, "Login UnSuccessfull");
-            loginUser();
-            ReturnLoginStatus();
+           
+
             return "LOGIN unsuccessful, Password or Username is invalid";
 
         }
