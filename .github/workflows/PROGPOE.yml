@@ -22,7 +22,7 @@ jobs:
 
       - name: compile classes
         working-directory: ./src
-        run: javac -cp "../../testresources/junit-platform-console-standalone-1.6.0.jar" Login/Login2.java Login/LoginDetail.java Login/Task.java Login/TO_DO_LIST.java "../test/Login/LoginTest.java" "../test/Login/DetailTest.java" "../test/Login/TaskTest.java" "../test/Login/TO_DO_LISTTest.java"
+        run: javac -cp "../../testresources/junit-platform-console-standalone-1.6.0.jar"  Login/LoginDetail.java Login/Task.java Login/TO_DO_LIST.java "../test/Login/LoginTest.java" "../test/Login/DetailTest.java" "../test/Login/TaskTest.java" "../test/Login/TO_DO_LISTTest.java"
 
       - name: List contents of src directory after compile
         working-directory: ./src/Login
