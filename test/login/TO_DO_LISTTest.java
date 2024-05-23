@@ -73,8 +73,20 @@ public class TO_DO_LISTTest {
         for (int i = 0; i < Hours.length; i++) {
             actual += Hours[i];
         }
-
+          System.out.println(actual);
         assertEquals(expected, actual);
+        int expected_itirration= 18;
+        int acutal_itirration = 0;
+        for (int i = 0; i <=1; i++) {
+            t.duration = 18;
+            t.setDuration(t.duration);
+            t.TotalHours();
+            acutal_itirration =t.TotalHours();
+            System.out.println(t.TotalHours());
+           
+        }
+        assertEquals(expected_itirration, acutal_itirration);
+        
     }
 
     
