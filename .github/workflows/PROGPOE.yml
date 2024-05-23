@@ -1,10 +1,10 @@
-# name: TestPROGPOE
+name: POE
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
   pull_request:
-    branches: [ "main" ]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -12,42 +12,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       - name: List contents
         run: ls
 
+      - name: Find Login.java
+        run: find . -name "Login.java"  # Search for Login.java recursively starting from the current directory
+
       - name: compile classes
         working-directory: ./src
-        run: javac -cp "../testresoureces/junit-platform-console-standalone-1.6.0.jar" ./login/Login.java ./login/LoginDetail.java "../test/login/LoginTest.java" "../test/login/LoginDetailTest.java" ./login/Task.java ./login/TO_DO_LIST.java "../test/login/TaskTest.java" "../test/login/TO_DO_LISTTest.java"
+        run: javac -cp "../../testresources/junit-platform-console-standalone-1.6.0.jar" Login/Login.java Login/LoginDetail.java Login/Task.java Login/TO_DO_LIST.java "../test/Login/LoginTest.java" "../test/Login/DetailTest.java" "../test/Login/TaskTest.java" "../test/Login/TO_DO_LISTTest.java"
 
       - name: List contents of src directory after compile
-        working-directory: ./src/login
+        working-directory: ./src/Login
         run: ls
 
       - name: copy compiled classes to testresources directory
-        working-directory: ./src/login
-        run: cp Task.class Login.class LoginDetail.class TO_DO_LIST.class ../../test/Login/
+        working-directory: ./src/Login
+        run: cp -t "../../test/st2123456" Login.class LoginDetail.class Task.class TO_DO_LIST.class
 
       - name: copy compiled Test classes to testresources directory
-        working-directory: ./test/login
-        run: cp LoginTest.class LoginDetailTest.class TaskTest.class TO_DO_LISTTest.class ../../testresources/
+        working-directory: ./test/Login
+        run: cp -t "../../testresources/" LoginTest.class DetailTest.class TaskTest.class TO_DO_LISTTest.class
 
       - name: List contents test package
-        working-directory: ./test/login
+        working-directory: ./test/Login
         run: ls
 
-      - name: run TO_DO_LIST Class tests and create report
+      - name: run Messages Class tests and create report
         working-directory: ./test
         run: |
-         ls
-         java -jar "../testresoureces/junit-platform-console-standalone-1.6.0.jar" -cp "." --select-class login.TO_DO_LISTTest
+          ls
+          java -jar "../testresources/junit-platform-console-standalone-1.6.0.jar" -cp "." --select-class Login.LoginDetailTest Login.TO_DO_LISTTest
 
-      - name: run LoginDetail Class tests and create report
-        working-directory: ./test
-        run: |
-         ls
-         java -jar "../testresoureces/junit-platform-console-standalone-1.6.0.jar" -cp "." --select-class login.LoginDetailTest
 
           
 
