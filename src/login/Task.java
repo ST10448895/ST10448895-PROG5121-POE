@@ -15,7 +15,7 @@ public class Task {
 
     public static void main(String[] args) {
        LoginDetail login = new LoginDetail();
-        Login sign = new Login();
+        Login2 sign = new Login2();
         
         login.start();
         
