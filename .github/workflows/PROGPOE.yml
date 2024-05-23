@@ -17,12 +17,12 @@ jobs:
       - name: List contents
         run: ls
 
-      - name: Find Login.java
+      - name: Find Login2.java
         run: find . -name "Login.java"  # Search for Login.java recursively starting from the current directory
 
       - name: compile classes
         working-directory: ./src
-        run: javac -cp "../../testresources/junit-platform-console-standalone-1.6.0.jar" Login/Login.java Login/LoginDetail.java Login/Task.java Login/TO_DO_LIST.java "../test/Login/LoginTest.java" "../test/Login/DetailTest.java" "../test/Login/TaskTest.java" "../test/Login/TO_DO_LISTTest.java"
+        run: javac -cp "../../testresources/junit-platform-console-standalone-1.6.0.jar" Login/Login2.java Login/LoginDetail.java Login/Task.java Login/TO_DO_LIST.java "../test/Login/LoginTest.java" "../test/Login/DetailTest.java" "../test/Login/TaskTest.java" "../test/Login/TO_DO_LISTTest.java"
 
       - name: List contents of src directory after compile
         working-directory: ./src/Login
@@ -30,7 +30,7 @@ jobs:
 
       - name: copy compiled classes to testresources directory
         working-directory: ./src/Login
-        run: cp -t "../../test/st2123456" Login.class LoginDetail.class Task.class TO_DO_LIST.class
+        run: cp -t "../../test/st2123456" Login2.class LoginDetail.class Task.class TO_DO_LIST.class
 
       - name: copy compiled Test classes to testresources directory
         working-directory: ./test/Login
