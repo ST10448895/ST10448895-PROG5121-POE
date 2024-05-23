@@ -39,7 +39,7 @@ public class TO_DO_LISTTest {
         Actual = description1.checkTaskDescription();
         assertEquals(Expected, Actual);
 
-        // assertTrue(Actual);
+        
     }
 
     @Test
@@ -49,8 +49,7 @@ public class TO_DO_LISTTest {
         String[] taskNames = {"CRAB_CATCH", "CROW_WATCH", "CREAM_REFILL", "CRUST_CUTTING"};
 
         // Generate task IDs for each combination of dev_name and task name
-        t.Tasknumber = -1;
-       // for (int i = 0; i < devNames.length; i++) {
+        t.Tasknumber = -1;    
             for (int j = 0; j < taskNames.length; j++) {
 
                 t.setTask_Name(taskNames[j]);
@@ -61,7 +60,7 @@ public class TO_DO_LISTTest {
                 String expectedTaskID = taskNames[j].substring(0, 2) + ":" + t.Tasknumber  + ":" + devNames[j].substring(devNames[j].length() - 3);
                System.out.println(actual);
                 assertEquals(expectedTaskID, actual);
-           // }
+           
         }
     }
 
