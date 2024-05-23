@@ -67,11 +67,11 @@ public class TO_DO_LISTTest {
     @Test
     public void testTotalHours() {
         int expected = 89;
-        int[] hours = {10, 12, 55, 11, 1};
+        int[] Hours = {10, 12, 55, 11, 1};
         int actual = 0;
 
-        for (int i = 0; i < hours.length; i++) {
-            actual += hours[i];
+        for (int i = 0; i < Hours.length; i++) {
+            actual += Hours[i];
         }
 
         assertEquals(expected, actual);
