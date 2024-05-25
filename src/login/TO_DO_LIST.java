@@ -105,7 +105,8 @@ public class TO_DO_LIST {
     }
 
     public int Printtotal() {
-        total = total + duration;
+        total =0;
+        total = total+ duration;
         return total;
     }
 
