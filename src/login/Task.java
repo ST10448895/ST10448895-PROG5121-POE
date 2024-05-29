@@ -50,10 +50,15 @@ public class Task {
                         task.setDuration(duration);
                         task.TotalHours();
                         task.TaskDetails();
+                        task.Printtotal(duration);
                       
                         Tasknumber++;
                     }
-                    JOptionPane.showMessageDialog(null," The total task hours is"+'\n'+ task.Printtotal());
+                    while(true){
+                    JOptionPane.showMessageDialog(null," The total task hours is"+'\n'+ task.Printtotal(task.totals));
+                    
+                    break;
+                    }
                     break;
                 case 2:
                     JOptionPane.showMessageDialog(null, "Coming soon.....");
