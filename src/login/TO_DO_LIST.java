@@ -12,6 +12,7 @@ public class TO_DO_LIST {
     public static String description, task_NAME, taskID, Developer_Name, Status, status2;
     public int loops, Tasknumber, duration, total, opt1, opt2, opt3, status;
     public int[] array = {10, 12, 55, 11, 1};
+    public int totals = 0;
 
     public static void main(String[] args) {
 
@@ -97,17 +98,18 @@ public class TO_DO_LIST {
     }
 
     public Integer TotalHours() {
-        //The user is prompted to enter the total duration of the task in hours.
-        //duration = Integer.parseInt(JOptionPane.showInputDialog("please enter total duration of task in hours"));
-        total = total + duration;//adds the parsed duration value to an existing variable 
+        
+       
+        totals = + duration;//adds the parsed duration value to an existing variable 
 
         return duration;
     }
 
-    public int Printtotal() {
-        total =0;
-        total = total+ duration;
-        return total;
+    public int Printtotal(int hour) {
+       
+        hour = duration;
+        totals =+ hour;
+        return totals;
     }
 
     public String TaskDetails() {
