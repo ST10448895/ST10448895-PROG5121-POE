@@ -46,11 +46,11 @@ public class Task {
                         task.description = JOptionPane.showInputDialog(null, "Enter a task description less than 50 characters:");
                         task.checkTaskDescription();
                         task.TaskID();
-                        duration = Integer.parseInt(JOptionPane.showInputDialog("please enter total duration of task in hours"));
-                        task.setDuration(duration);
+                        task.duration = Integer.parseInt(JOptionPane.showInputDialog("please enter total duration of task in hours"));
+                        task.setDuration(task.duration);
                         task.TotalHours();
                         task.TaskDetails();
-                        task.Printtotal(duration);
+                        task.Printtotal(task.duration);
                       
                         Tasknumber++;
                     }
