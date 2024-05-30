@@ -107,8 +107,7 @@ public class TO_DO_LIST {
 
     public int Printtotal(int hour) {
        
-        hour = duration;
-        totals =+ hour;
+         totals += hour;//adds the parsed duration value to an existing variable
         return totals;
     }
 
