@@ -71,7 +71,9 @@ public class TO_DO_LISTTest {
         int actual = 0;
 
         for (int i = 0; i < Hours.length; i++) {
-            actual += Hours[i];
+            int duration = Hours[i];          
+            actual = t.Printtotal(duration);
+            
         }
           System.out.println(actual);
         assertEquals(expected, actual);
