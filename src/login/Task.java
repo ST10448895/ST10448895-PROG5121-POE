@@ -12,6 +12,7 @@ public class Task {
 
     public static String description, task_NAME, taskID, Status,developer_Name;
     public static int loops, Tasknumber, duration, option;
+    public static int totals = 0;
 
     public static void main(String[] args) {
        LoginDetail login = new LoginDetail();
@@ -34,28 +35,28 @@ public class Task {
 //the user’s input for the number of tasks they want to enter and converts it to an integer value stored in the loops variable.
                     loops = Integer.parseInt(JOptionPane.showInputDialog("please enter how many tasks you want to eneter"));
                     for (int i = 0; i < loops; i++) {//this for loop iterates from 0 up to (but not including) the value stored in loops,
-                        task.setTaskNO(Tasknumber);
                         
-             developer_Name = JOptionPane.showInputDialog("Enter developers name and surename");
-             task.setDeev_Name(developer_Name);
-                        task.getDev_Name();//retrieves the developer’s name from the task object.
-                        task_NAME = JOptionPane.showInputDialog("enter the name of new task");
+                         task.setTaskNO(Tasknumber);
+                        developer_Name = JOptionPane.showInputDialog("Enter developer's name and surname");
+                        task.setDeev_Name(developer_Name);
+                        task.getDev_Name();
+                        task_NAME = JOptionPane.showInputDialog("Enter the name of new task");
                         task.setTask_Name(task_NAME);
-                        task.getTask_Name();//retrieves the task name from the task object.
-                        task.status();//retrieves the status from the task object.
-                        task.description = JOptionPane.showInputDialog(null, "Enter a task description less than 50 characters:");
+                        task.getTask_Name();
+                        description = JOptionPane.showInputDialog("Enter task description (less than 50 characters):");
+                        task.description = description;  // Set the description in the task object
                         task.checkTaskDescription();
+                        task.status();
                         task.TaskID();
-                        task.duration = Integer.parseInt(JOptionPane.showInputDialog("please enter total duration of task in hours"));
-                        task.setDuration(task.duration);
-                        task.TotalHours();
+                        duration = Integer.parseInt(JOptionPane.showInputDialog("Please enter total duration of task in hours"));
+                        task.setDuration(duration);
+                        totals = task.Printtotal(duration);
                         task.TaskDetails();
-                        task.Printtotal(task.duration);
-                      
+                                         
                         Tasknumber++;
                     }
                     while(true){
-                    JOptionPane.showMessageDialog(null," The total task hours is"+'\n'+ task.Printtotal(task.totals));
+                    JOptionPane.showMessageDialog(null," The total task hours is"+'\n'+ task.totals);
                     
                     break;
                     }
